@@ -1,0 +1,35 @@
+{
+  "name": "dsh-plugin-avatar-switcher",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "main": "./lib/index.js",
+  "description": "Custom chat avatars (user / assistant) for a stock DeepSeek Harness install - no wallpaper-engine required.",
+  "license": "MIT",
+  "exports": {
+    ".": "./lib/index.js",
+    "./client": "./lib/client.js",
+    "./client.js": "./lib/client.js",
+    "./cordis.patch.yml": "./cordis.patch.yml",
+    "./package.json": "./package.json"
+  },
+  "dsh": {
+    "id": "dsh-avatar-switcher",
+    "name": "DSH Avatar Switcher",
+    "version": "1.0.0",
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "inject": [
+        "@deepseek-ai/dsh-client-runtime"
+      ],
+      "platform": "web",
+      "immediately": true
+    }
+  },
+  "dshTarget": "0.2.2-rc.1",
+  "engines": {
+    "node": ">=22.5"
+  }
+}

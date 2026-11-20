@@ -1,0 +1,3 @@
+- insert:
+    - id: avatar-switcher
+      name: 'dsh-plugin-avatar-switcher'
